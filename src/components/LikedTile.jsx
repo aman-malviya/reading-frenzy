@@ -10,7 +10,7 @@ function LikedTile(props){
     </div>
     <div className='grid-item d-flex align-items-center'>
     <div className='liked-img'>
-    <img width='100%' src={props.bg} />
+    <img alt='' width='100%' src={props.bg} />
     </div>
     </div>
 

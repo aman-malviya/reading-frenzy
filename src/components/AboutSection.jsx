@@ -8,7 +8,7 @@ function AboutSection(){
     return(<div className='about-section'>
     <h2 style={{'fontFamily':'"EB Garamond",serif'}}>About Us</h2>
     <div className="about-img">
-    <img width='100%' src='Assets/2.jpg' />
+    <img alt='' width='100%' src='Assets/2.jpg' />
     </div>
     <p style={{'text-align':'center', 'padding':'5%'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet</p>
     <br />
