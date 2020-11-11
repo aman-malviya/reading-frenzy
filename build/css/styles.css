@@ -1,0 +1,132 @@
+body{
+    padding:0 5%;
+    color:#000;
+    font-family:'Karla', sans-serif;
+    background-color:rgba(0,0,0,0.05) !important;
+}
+.navbar-brand{
+    float:center;
+}
+/* carousel */
+.carousel{
+    margin:3% 0;
+}
+.carousel-inner{
+    border-radius:5px !important;
+}
+.shade{
+    background-color:rgba(0,0,0,0.3);
+        padding:10% 30% 10% 10%;
+        color:#eeeeee;
+}
+.carousel-control-prev, .carousel-control-next{
+   visibility: hidden;
+   transition:0.2s !important;
+}
+.carousel:hover .carousel-control-prev{
+    visibility:visible;
+    transform: translateX(-20%);
+}
+.carousel:hover .carousel-control-next{
+    visibility:visible;
+    transform: translateX(20%);
+}
+.keep-reading{
+    color:#4ecca3;
+}
+.keep-reading:hover{
+    color:#4ecca3;
+    text-decoration:none;
+}
+
+/* Category Section */
+.category-section{
+    padding:3% 0 0;
+}
+.categoryTile{
+    margin:4% 0;
+    padding:20%;
+    display:flex;
+    justify-content:center;
+}
+.categoryTile div{
+    background-color:#eeeeee;
+    padding:5% 12%;
+     outline:1px solid #eeeeee;
+    outline-offset:5px;
+}
+.categoryTile div span{
+    color:#010101;
+}
+.categoryTile:hover{
+    color:#010101 !important;
+    text-decoration:none;
+}
+
+/* Featured Section */
+.featured-section{
+    padding:5% 0;
+}
+.featured-tile{
+    padding:70% 12% 0;
+}
+.featured-blog-type{
+    background-color:#fff;
+    padding:15% 8% 1%;
+    outline:2px solid #fff;
+    outline-offset:10px;
+}
+.featured-blog-described{
+    padding:2% 18% 8%;
+    background-color:#fff;
+    transform:translateY(-10px);
+}
+
+/* Latest Section */
+.latest-tile{
+  padding:50% 8% 0;
+  margin-bottom:2%;
+}
+.latest-blog-type{
+    background-color:#fff;
+    padding:5% 5% 1%;
+    outline:2px solid #fff;
+    outline-offset:10px;
+}
+.latest-blog-described{
+    padding:2% 12% 5%;
+    background-color:#fff;
+    transform:translateY(-16px);
+}
+/* AboutSection */
+.about-section{
+    font-family:"Karla",sans-serif;
+}
+.about-img{
+    padding: 0 15%;
+}
+.liked-img{
+    width:120px !important;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  padding: 5px 5px 5px 10px;
+}
+.social-media ul{
+    padding:2%;
+}
+.social-media ul li{
+  padding:3% 4% 5% 0;
+}
+.social-media-link span{
+    color:#000 !important;
+    transition:0.1s;
+}
+.social-media-link span:hover{
+    background-color:#000;
+    color:#eeeeee !important;
+}
