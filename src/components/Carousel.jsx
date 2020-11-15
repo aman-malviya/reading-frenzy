@@ -6,7 +6,7 @@ import posts from '../posts'
 function Carousel(props){
  
     return (<div>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-pause='hover'>
   <div class="carousel-inner">
     <div class="carousel-item active">
       <CarouselWindow category={posts[0].postCategory} title={posts[0].postTitle} content={posts[0].postContent.substring(0,200)} background="Assets/6.jpg" />

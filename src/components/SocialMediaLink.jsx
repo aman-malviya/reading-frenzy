@@ -4,7 +4,7 @@ import {Link} from '@material-ui/core'
 function SocialMediaLink(props){
     return(<div className='social-media-link'>
     <Link href='#'>
-    <span className='d-flex justify-content-center align-items-center' style={{ 'height':'35px', 'width':'35px', 'border':'1px solid rgba(0,0,0,0.8)', 'border-radius':'3px'}}>
+    <span className='d-flex justify-content-center align-items-center' style={{ 'height':'35px', 'width':'35px', 'border':props.border, 'border-radius':'50%', 'fontSize':'0.9rem', 'backgroundColor':props.bg}}>
     <i>
     <i class={props.class}></i>
     </i>

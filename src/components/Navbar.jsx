@@ -4,7 +4,7 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 
 function Navbar(){
     return(<div className='d-flex justify-content-center'>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <button
         class="navbar-toggler"
         type="button"
@@ -21,59 +21,30 @@ function Navbar(){
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link hvr-underline-reveal" href="/home">
+            <a class="nav-link hvr-underline-reveal" href="/life-style">
               Life Style
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hvr-underline-reveal" href="/about">
+            <a class="nav-link hvr-underline-reveal" href="/travel">
               Travel
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hvr-underline-reveal" href="/contact">
+            <a class="nav-link hvr-underline-reveal" href="/recipes">
               Recipes
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hvr-underline-reveal" href="/compose">
+            <a class="nav-link hvr-underline-reveal" href="/science">
               Science
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hvr-underline-reveal" href="/cat">
+            <a class="nav-link hvr-underline-reveal" href="/categories">
               Categories
             </a>
           </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link hvr-underline-reveal dropdown-toggle "
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Pages
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item dropdown-link-1 hvr-icon-wobble-horizontal"
-                href="/categories/physics"
-              >
-                <i class="fal fa-atom fa-2x"></i>Physics
-              </a>
-
-              <a
-                class="dropdown-item hvr-icon-wobble-horizontal"
-                href="/categories/facts"
-              >
-                <i class="fas fa-head-side-brain fa-2x"></i>Facts
-              </a>
-            </div>
-          </li>
-          
           
         </ul>
       </div>

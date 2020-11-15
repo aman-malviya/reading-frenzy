@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from '@material-ui/core'
+import GeneralLink from './GeneralLink'
 
 function FeaturedTile(props){
     return (<div><div className='featured-tile' style={{'background':'url('+props.bg+')', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
@@ -9,7 +9,7 @@ function FeaturedTile(props){
     </div>
     <div className='featured-blog-described'>
     <h2 style={{'fontFamily':'"EB Garamond", serif', 'padding':'2% 0'}}>{props.title}</h2>
-    <Link style={{'color':'#4ecca3'}} href='#'>See Full Post</Link>
+    <GeneralLink text='Read More' href='/post' />
     </div>
     </div>)
 }

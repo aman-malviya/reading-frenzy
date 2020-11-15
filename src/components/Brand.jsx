@@ -1,17 +1,13 @@
 import React from 'react'
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import SocialMedia from './SocialMedia'
 
 function Brand(){
     return (<div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <SocialMedia />
-  <a class="navbar-brand" href="#">Quizzers' Club MANIT</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <MenuRoundedIcon />
-  </button>
+<nav class="navbar navbar-expand-lg brand">
+  <SocialMedia border='1px solid rgba(0,0,0,0.8)' />
+  <a class="navbar-brand" href="/"><span>RF</span><br />Reading Frenzy</a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+  <div class="collapse navbar-collapse">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a class="nav-link" href="/about">About Us</a>
@@ -23,6 +19,7 @@ function Brand(){
     </ul>
   </div>
 </nav>
+
     </div>)
 }
 

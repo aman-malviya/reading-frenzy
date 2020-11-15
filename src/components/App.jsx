@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from './Home'
 import About from './About'
 import Contact from './Contact'
+import CategoryPage from './CategoryPage'
+import ParticularCategoryPage from './ParticularCategoryPage'
 
 function App(){
     return(<div>
@@ -11,6 +13,8 @@ function App(){
     <Route path='/' exact><Home /></Route>
     <Route path='/about'><About /></Route>
     <Route path='/contact'><Contact /></Route>
+    <Route path='/categories'><CategoryPage /></Route>
+    <Route path='/:id'><ParticularCategoryPage /></Route>
     </Switch>
     </Router>
     </div>)

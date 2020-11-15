@@ -9,7 +9,7 @@ function Categories(){
     <div className='col-lg col-md-6'><CategoryTile category='Travel' bg='Assets/3.jpg' /></div>
     <div className='col-lg col-md-6'><CategoryTile category='Recipes' bg='Assets/4.jpg' /></div>
     </div>
-    <a href='' style={{'float':'right', 'color':'#010101'}}>View all</a>
+    <a href='/categories' style={{'float':'right', 'color':'#010101'}}>View all</a>
     </div>)
 }
 export default Categories;
