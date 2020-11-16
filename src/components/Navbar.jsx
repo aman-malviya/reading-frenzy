@@ -5,6 +5,7 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 function Navbar(){
     return(<div className='d-flex justify-content-center'>
     <nav class="navbar navbar-expand-lg">
+
       <button
         class="navbar-toggler"
         type="button"

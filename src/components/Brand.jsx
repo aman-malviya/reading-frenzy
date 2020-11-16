@@ -4,7 +4,8 @@ import SocialMedia from './SocialMedia'
 function Brand(){
     return (<div>
 <nav class="navbar navbar-expand-lg brand">
-  <SocialMedia border='1px solid rgba(0,0,0,0.8)' />
+  <div className='social-media-hide'><SocialMedia border='1px solid rgba(0,0,0,0.8)' /></div>
+  
   <a class="navbar-brand" href="/"><span>RF</span><br />Reading Frenzy</a>
 
   <div class="collapse navbar-collapse">

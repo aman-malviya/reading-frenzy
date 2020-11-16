@@ -9,7 +9,7 @@ function FeaturedTile(props){
     </div>
     <div className='featured-blog-described'>
     <h2 style={{'fontFamily':'"EB Garamond", serif', 'padding':'2% 0'}}>{props.title}</h2>
-    <GeneralLink text='Read More' href='/post' />
+    <GeneralLink text='Read More' href='/posts/post' />
     </div>
     </div>)
 }

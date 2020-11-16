@@ -4,6 +4,7 @@ import Home from './Home'
 import About from './About'
 import Contact from './Contact'
 import CategoryPage from './CategoryPage'
+import ParticularPostPage from './ParticularPostPage'
 import ParticularCategoryPage from './ParticularCategoryPage'
 
 function App(){
@@ -14,7 +15,8 @@ function App(){
     <Route path='/about'><About /></Route>
     <Route path='/contact'><Contact /></Route>
     <Route path='/categories'><CategoryPage /></Route>
-    <Route path='/:id'><ParticularCategoryPage /></Route>
+    <Route path='/posts/:id' exact><ParticularPostPage /></Route>
+    <Route path='/:category' exact><ParticularCategoryPage /></Route>
     </Switch>
     </Router>
     </div>)
