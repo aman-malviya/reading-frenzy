@@ -7,7 +7,7 @@ function Navbar(){
     <nav class="navbar navbar-expand-lg">
 
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -19,30 +19,30 @@ function Navbar(){
 
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link hvr-underline-reveal" href="/life-style">
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <a className="nav-link hvr-underline-reveal" href="/life-style">
               Life Style
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link hvr-underline-reveal" href="/travel">
+          <li className="nav-item">
+            <a className="nav-link hvr-underline-reveal" href="/travel">
               Travel
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link hvr-underline-reveal" href="/recipes">
+          <li className="nav-item">
+            <a className="nav-link hvr-underline-reveal" href="/recipes">
               Recipes
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link hvr-underline-reveal" href="/science">
+          <li className="nav-item">
+            <a className="nav-link hvr-underline-reveal" href="/science">
               Science
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link hvr-underline-reveal" href="/categories">
+          <li className="nav-item">
+            <a className="nav-link hvr-underline-reveal" href="/categories">
               Categories
             </a>
           </li>

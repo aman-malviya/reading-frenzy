@@ -9,9 +9,9 @@ function AboutSection(){
     return(<div className='about-section'>
     <h2 style={{'fontFamily':'"EB Garamond",serif'}}>About Us</h2>
     <div className="about-img">
-    <img alt='' width='100%' src='Assets/2.jpg' />
+    <img alt='logo-img' width='100%' src='Assets/2.jpg' />
     </div>
-    <p style={{'text-align':'center', 'padding':'5%'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet</p>
+    <p style={{'textAlign':'center', 'padding':'5%'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet</p>
     <br />
     <h2 style={{'fontFamily':'"EB Garamond",serif'}}>Liked Posts</h2>
     <LikedTile title={posts[0].postTitle} bg={posts[0].postBg} />

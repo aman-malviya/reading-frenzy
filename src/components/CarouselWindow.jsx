@@ -10,9 +10,9 @@ function CarouselWindow(props){
     }
     return (<div style={carouselWindowStyle} >
     <div className="shade">
-    <h6 style={{'text-transform':'upperCase', 'fontSize':'0.9rem', 'color': '#eeeeee', 'opacity':'0.6', 'letter-spacing':'0.5px'}}>{props.category}</h6>
-    <h1 style={{'font-family': "'EB Garamond', serif", 'color':'#4ecca3'}}>{props.title}</h1>
-    <h5 style={{'font-family':"'Karla', sans-serif"}}>{props.content}</h5><br />
+    <h6 style={{'textTransform':'upperCase', 'fontSize':'0.9rem', 'color': '#eeeeee', 'opacity':'0.6', 'letterSpacing':'0.5px'}}>{props.category}</h6>
+    <h1 style={{'fontFamily': "'EB Garamond', serif", 'color':'#4ecca3'}}>{props.title}</h1>
+    <h5 style={{'fontFamily':"'Karla', sans-serif"}}>{props.content}</h5><br />
     <GeneralLink text="Keep Reading" href='/posts/post' />
     </div>
     </div>)

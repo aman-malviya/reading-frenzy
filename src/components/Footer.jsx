@@ -15,7 +15,7 @@ function Footer(){
     <div style={{'transform':'translateX(10px)'}} className='d-flex justify-content-center'>
     <SocialMedia bg="#fff" border='1px solid rgba(255,255,255,1)' />
     </div>
-    <p style={{'color':'#fff', 'text-align':'center', 'fontFamily':'"Karla", sans-serif;', 'opacity':'0.8', 'fontSize':'0.9rem'}}><Copyright /> Reading Frenzy by Aman Malviya {year}</p>
+    <p style={{'color':'#fff', 'textAlign':'center', 'fontFamily':'"Karla", sans-serif;', 'opacity':'0.8', 'fontSize':'0.9rem'}}><Copyright /> Reading Frenzy by Aman Malviya {year}</p>
     </div>)
 }
 export default Footer;

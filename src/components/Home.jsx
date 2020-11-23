@@ -6,6 +6,7 @@ import Featured from './Featured'
 import Latest from './Latest'
 import AboutSection from './AboutSection'
 import Footer from './Footer'
+import axios from 'axios'
 
 function Home() {
 

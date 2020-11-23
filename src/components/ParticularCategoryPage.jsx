@@ -17,9 +17,9 @@ function ParticularCategoryPage() {
     <CarouselWindow category={posts[0].postCategory} title={posts[0].postTitle} content={posts[1].postContent.substring(0,200)}  background="Assets/2.jpg" linkDisplay='none' />
     <br />
     <br />
-    <h6 style={{'text-transform':'upperCase', 'fontSize':'0.9rem', 'color': '#000', 'opacity':'0.6', 'letter-spacing':'0.5px'}}>Category</h6>
-    <h1 style={{'font-family':'"EB Garamond", serif'}}>{category}</h1>
-    <hr style={{'border':'0', 'border-top':'1px solid rgba(0,0,0,0.3)'}} />
+    <h6 style={{'textTransform':'upperCase', 'fontSize':'0.9rem', 'color': '#000', 'opacity':'0.6', 'letterSpacing':'0.5px'}}>Category</h6>
+    <h1 style={{'fontFamily':'"EB Garamond", serif'}}>{category}</h1>
+    <hr style={{'border':'0', 'borderTop':'1px solid rgba(0,0,0,0.3)'}} />
     <div className='row'>
     <div className='col-lg-8'>
     <div className='row'>

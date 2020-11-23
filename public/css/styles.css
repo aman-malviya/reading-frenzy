@@ -16,6 +16,7 @@ body{
 .navbar-brand{
     font-family:'EB Garamond', serif;
     width:100%;
+    transition:0.5s;
 }
 .navbar-brand span{
     font-family: 'Sansita Swashed', cursive;
@@ -23,13 +24,17 @@ body{
 }
 .navbar a{
     color:#000;
-    transition:0.5s;
     min-width:100px;
 }
 .navbar a:hover{
     color:#000;
-    opacity:0.9;
+    text-decoration:underline;
+}
+.navbar-brand:hover{
+    color:#000;
+    opacity:0.8;
     transform:scale(1.02);
+    text-decoration:none !important;
 }
 @media (max-width:1000px){
     .social-media-hide{
