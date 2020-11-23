@@ -6,7 +6,7 @@ import posts from '../posts'
 
 
 function Contact() {
-    return(<div>
+    return(<div style={{'backgroundColor':'fff'}}>
     <Header />
     <CarouselWindow category='Get in Touch' title='Contact Us' content={posts[1].postContent.substring(0,200)}  background="Assets/2.jpg" linkDisplay='none' />
     <br />

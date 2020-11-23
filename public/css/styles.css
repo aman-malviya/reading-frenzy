@@ -302,3 +302,24 @@ textarea:focus{
     color:#16a596;
     text-decoration:none;
 }
+
+/* ScrollBar */
+.contact-panel::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+.contact-panel::-webkit-scrollbar-track {
+  background: #ffa62b;
+  background-clip: content-box;
+}
+
+/* Handle */
+.contact-panel::-webkit-scrollbar-thumb {
+  background: #16697a;
+}
+
+/* Handle on hover */
+.contact-panel::-webkit-scrollbar-thumb:hover {
+  background: #16697a;
+}

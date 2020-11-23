@@ -7,7 +7,7 @@ import CategoryPage from './CategoryPage'
 import ParticularPostPage from './ParticularPostPage'
 import ParticularCategoryPage from './ParticularCategoryPage'
 import firebase from '../fire'
-
+import WriteBlog from './WriteBlog'
 
 
 function App(){
@@ -42,6 +42,7 @@ function App(){
     <Router>
     <Switch>
     <Route path='/' exact><Home /></Route>
+    <Route path='/write-blog'><WriteBlog /></Route>
     <Route path='/about'><About /></Route>
     <Route path='/contact'><Contact /></Route>
     <Route path='/categories'><CategoryPage /></Route>
