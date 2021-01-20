@@ -25,18 +25,18 @@ function App(){
     // }
     // const [todoList, setTodoList]=useState('');
 
-    useEffect(function(){
-       const todoRef=firebase.database().ref("Todo");
-       todoRef.on("value", function(snapshot) {
-           const todos=snapshot.val();
-           const todoList=[];
-           for(let id in todos){
-               todoList.push(todos[id]);
-           }
-           setTodoList(todoList);
-       });
+    // useEffect(function(){
+    //    const todoRef=firebase.database().ref("Todo");
+    //    todoRef.on("value", function(snapshot) {
+    //        const todos=snapshot.val();
+    //        const todoList=[];
+    //        for(let id in todos){
+    //            todoList.push(todos[id]);
+    //        }
+    //        setTodoList(todoList);
+    //    });
 
-    });
+    // });
     return(<div>
     <div>{todoList?todoList.map((todo)=><h1>{todo.title}</h1>):''}</div>
     <Router>

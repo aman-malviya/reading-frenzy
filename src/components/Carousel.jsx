@@ -1,10 +1,24 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import CarouselWindow from './CarouselWindow'
 import {ArrowForward, ArrowBack} from '@material-ui/icons'
 import posts from '../posts'
+import firebase from '../fire'
 
 function Carousel(props){
- 
+
+  const [blogList, setBlogList]=useState();
+    useEffect(()=>{
+       const blogRef=firebase.database().ref("Blog");
+       blogRef.on("value", (snapshot)=>{
+         const blogs=snapshot.val();
+         const blogList=[];
+         for(let id in blogs){
+           blogList.push(blogs[id]);
+         }
+         console.log(blogList);
+         setBlogList(blogList);
+       })
+    },[]);
     return (<div>
     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-pause='hover'>
   <div className="carousel-inner">

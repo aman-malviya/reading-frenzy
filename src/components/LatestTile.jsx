@@ -15,7 +15,7 @@ function LatestTile(props){
     <GeneralLink text='Continue Reading.....'  href='/posts/post' />
     <hr style={{'border':'0', 'borderTop':'1px solid rgba(0,0,0,0.3)', 'marginTop':'8%'}}></hr>
     <p style={{'fontFamily':'"EB Garamond", serif', 'opacity':"0.8", 'display':'inline', 'fontSize':'0.8rem'}}>{props.author} | {props.date}</p>
-    <ThumbUpAlt style={{'float':'right', 'color':'rgba(0,0,0,0.3)'}} />
+    <ThumbUpAlt style={{'float':'right',  'color':'rgba(0,0,0,0.3)'}} />
     </div>
     </div>)
 }
