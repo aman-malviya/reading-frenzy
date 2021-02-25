@@ -3,7 +3,7 @@ import GeneralLink from './GeneralLink'
 import {ThumbUpAlt} from '@material-ui/icons'
 
 function LatestTile(props){
-    return(<div>
+    return(<div style={{'padding':'0 0 0 0'}}>
     <div className='latest-tile' style={{'background':'url('+props.bg+')', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
     <div className='latest-blog-type'>
     <h6 style={{'textTransform':'upperCase', 'fontSize':'0.9rem', 'color': '#010101', 'opacity':'0.6','letterSpacing':'0.5px'}}>{props.category}</h6>

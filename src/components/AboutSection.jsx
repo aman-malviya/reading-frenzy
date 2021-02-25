@@ -13,13 +13,13 @@ function AboutSection(){
     </div>
     <p style={{'textAlign':'center', 'padding':'5%'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet</p>
     <br />
-    <h2 style={{'fontFamily':'"EB Garamond",serif'}}>Liked Posts</h2>
+    {/*<h2 style={{'fontFamily':'"EB Garamond",serif'}}>Liked Posts</h2>
     <LikedTile title={posts[0].postTitle} bg={posts[0].postBg} />
     <LikedTile title={posts[1].postTitle} bg={posts[1].postBg} />
     <LikedTile title={posts[0].postTitle} bg={posts[0].postBg} />
     <LikedTile title={posts[1].postTitle} bg={posts[1].postBg} />
     <LikedTile title={posts[0].postTitle} bg={posts[0].postBg} />
-    <br />
+    <br />*/}
     <h2 style={{'fontFamily':'"EB Garamond",serif'}}>Editor's Choice</h2>
     <LikedTile title={posts[0].postTitle} bg={posts[0].postBg} />
     <LikedTile title={posts[1].postTitle} bg={posts[1].postBg} />

@@ -9,8 +9,8 @@ function ParticularPostPage(){
     let {id} =useParams();
     return(<div>
     <Header />
-    <div style={{'padding':'0 5%'}}>
-    <LatestTile author={posts[0].postAuthor} date={posts[0].postDate} bg='/Assets/6.jpg' category={posts[0].postCategory} title={posts[0].postTitle} content={posts[0].postContent.substring(0,200)} />
+    <div style={{'padding':'0 10%'}}>
+    <LatestTile author={posts[2].postAuthor} date={posts[2].postDate} bg='/Assets/6.jpg' category={posts[2].postCategory} title={posts[2].postTitle} content={posts[2].postContent} />
     </div>
     
     <Footer />

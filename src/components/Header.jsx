@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 
 
 function Header(){
-    return (<div>
+    return (<div style={{'padding':'0 10%'}}>
     <Brand />
     <Navbar />
     </div>)

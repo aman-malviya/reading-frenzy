@@ -8,6 +8,7 @@ import ParticularPostPage from './ParticularPostPage'
 import ParticularCategoryPage from './ParticularCategoryPage'
 import firebase from '../fire'
 import WriteBlog from './WriteBlog'
+import Blog1 from './blogs/blog1'
 
 
 function App(){
@@ -38,7 +39,6 @@ function App(){
 
     // });
     return(<div>
-    <div>{todoList?todoList.map((todo)=><h1>{todo.title}</h1>):''}</div>
     <Router>
     <Switch>
     <Route path='/' exact><Home /></Route>
@@ -48,6 +48,7 @@ function App(){
     <Route path='/categories'><CategoryPage /></Route>
     <Route path='/posts/:id' exact><ParticularPostPage /></Route>
     <Route path='/:category' exact><ParticularCategoryPage /></Route>
+    <Route path='/blogs/blog1' exact><Blog1 /></Route>
     </Switch>
     </Router>
     </div>)
