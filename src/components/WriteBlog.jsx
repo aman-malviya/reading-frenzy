@@ -20,41 +20,60 @@ function WriteBlog() {
 
     const publishTheBlog=()=>{
         let time=new Date().getTime()
-        firebase.firestore().collection("Blogs").doc().set({
-            category:category,
-            editorChoice:editorChoice,
-            featured:featured,
-            author:author,
-            title:title,
-            content:content,
-            date:new Date().toDateString(),
-            carousel:carousel,
-            trending:trending,
-            time:time
-        })
-        .then(() => {
-            document.getElementById("message").style.visibility="visible"
-            setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}>Uploading Image ...</p>)
-        })
-        .catch((error) => {
-            setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}><i style={{'color':'red'}} class="fad fa-exclamation-circle"></i> Some error has occured</p>)
-            setTimeout(() => {
-                setMessage("")
-            }, 3000);
-        });
         const img=document.getElementById("photo").files[0]
-        var metadata = {
-            contentType: img.type,
-        };
-        firebase.storage().ref().child('images/'+time).put(img, metadata).then((snapshot)=>{
-            setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}><i style={{'color':'#38b000'}} class="fa fa-check-circle" aria-hidden="true"></i> Blog published</p>)
+        if(category==="" || featured==="" || editorChoice==="" || author==="" || title==="" || content==="" || carousel==="" || trending==="" || img===undefined){
+            document.getElementById("message").style.visibility="visible"
+            setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}><i style={{'color':'red'}} class="fad fa-exclamation-circle"></i> Fill out all the fields first.</p>)
             setTimeout(() => {
                 setMessage("")
                 document.getElementById("message").style.visibility="hidden"
             }, 3000);
-            console.log(snapshot.ref.fullPath)
-        })
-    }
+        }else{
+            firebase.firestore().collection("Blogs").doc().set({
+                category:category,
+                editorChoice:editorChoice,
+                featured:featured,
+                author:author,
+                title:title,
+                content:content,
+                date:new Date().toDateString(),
+                carousel:carousel,
+                trending:trending,
+                time:time
+            })
+            .then(() => {
+                document.getElementById("message").style.visibility="visible"
+                setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}>Uploading Image ...</p>)
+            })
+            .catch((error) => {
+                setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}><i style={{'color':'red'}} class="fad fa-exclamation-circle"></i> Some error has occured</p>)
+                setTimeout(() => {
+                    setMessage("")
+                    document.getElementById("message").style.visibility="hidden"
+                }, 3000);
+            });
+            var metadata = {
+                contentType: img.type,
+            };
+            firebase.storage().ref().child('images/'+time).put(img, metadata).then((snapshot)=>{
+                setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}><i style={{'color':'#38b000'}} class="fa fa-check-circle" aria-hidden="true"></i> Blog published</p>)
+                setAuthor("")
+                setEditorChoice("")
+                setFeatured("")
+                setTrending("")
+                setCarousel("")
+                setCategory("")
+                setContent("")
+                setTitle("")
+                setTimeout(() => {
+                    setMessage("")
+                    document.getElementById("message").style.visibility="hidden"
+                }, 3000);
+                console.log(snapshot.ref.fullPath)
+                })
+            }
+        }
+        
     
     return (<div>
     <Brand />

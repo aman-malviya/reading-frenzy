@@ -19,7 +19,7 @@ function Latest(){
     <hr style={{'border':'0', 'borderTop':'1px solid rgba(0,0,0,0.3)'}} />
     <div className='latest-section'>
     {blogList.map(blog=>{
-      return <LatestTile author={blog[1].author} date={blog[1].date} bg={blog[1].time} category={blog[1].category} title={blog[1].title} content={blog[1].content.substring(0,200)} id={blog[0]} />  
+      return <LatestTile author={blog[1].author} date={blog[1].date} bg={blog[1].time} category={blog[1].category} title={blog[1].title} content={blog[1].content.substring(0,100)+"..."} id={blog[0]} />  
     })}
     
     </div>

@@ -1,14 +1,46 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import CarouselWindow from './CarouselWindow'
 import posts from '../posts'
+import firebase from '../fire'
 
 
 function Contact() {
+    const [name, setName]=useState("")
+    const [topic, setTopic]=useState("")
+    const [msg, setMsg]=useState("")
+    const [email, setEmail]=useState("")
+    const [message, setMessage]=useState("")
+
+    const sendMessage=(e)=>{
+        if(name === "" || email === "" || topic === "" || msg === "" ){
+            setMessage(<p style={{'color':'red'}}>Fill out all the fields first</p>)
+            setTimeout(() => {
+                setMessage("")
+            }, 3000);
+        }else{
+            firebase.firestore().collection("Messages").doc().set({
+                name:name,
+                email:email,
+                topic:topic,
+                message:msg
+            }).then(()=>{
+                setMessage(<p style={{'color':'green'}}>Your message has been sent</p>)
+                setTimeout(() => {
+                    setMessage("")
+                }, 3000);
+            })
+        }
+    }
+
     return(<div style={{'backgroundColor':'fff'}}>
     <Header />
-    <CarouselWindow category='Get in Touch' title='Contact Us' content={posts[1].postContent.substring(0,200)}  background="Assets/2.jpg" linkDisplay='none' />
+    <div style={{'padding':'0 5%'}}>
+        <div style={{'backgroundImage':'url(Assets/2.jpg)', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
+            <CarouselWindow category='Get in Touch' title='Contact Us' content={posts[1].postContent.substring(0,200)} linkDisplay='none' />
+        </div>
+    </div>
     <br />
     <div style={{'padding':'0 5%'}} class="row padding no-gutters">
     <div className='col-lg-4'>
@@ -34,21 +66,20 @@ function Contact() {
         <div className="col-lg-8 contact-panel">
     <h1 style={{'fontFamily':'"EB Garamond",serif'}}>Message Us</h1>
     <hr style={{'border':'0', 'borderTop':'1px solid rgba(0,0,0,0.3)'}} />
-
-            <form className="contact-form" action="/contact" method="POST">
                 <div className="form-group">
-                <input type='text' style={{'width':'100%', 'background':'none'}} placeholder="Name" required />
+                <input value={name} onChange={e=>setName(e.target.value)} type='text' style={{'width':'100%', 'background':'none'}} placeholder="Name" required />
                 </div>
                 <div className="form-group">
-                <input type='text' style={{'width':'100%', 'background':'none'}} placeholder="E-Mail" required />
+                <input value={email} onChange={e=>setEmail(e.target.value)} type='text' style={{'width':'100%', 'background':'none'}} placeholder="E-Mail" required />
                 </div><div className="form-group">
-                <input type='text' style={{'width':'100%', 'background':'none'}} placeholder="Company" required />
+                <input value={topic} onChange={e=>setTopic(e.target.value)} type='text' style={{'width':'100%', 'background':'none'}} placeholder="What is it about?" required />
                 </div><div className="form-group">
-                <textarea style={{'width':'100%', 'backgroundColor':'rgba(0,0,0,0)'}} placeholder="Message" required rows='4' />
+                <textarea value={msg} onChange={e=>setMsg(e.target.value)} style={{'width':'100%', 'backgroundColor':'rgba(0,0,0,0)'}} placeholder="Message" required rows='4' />
                 </div>
                 
-                <button className="contact-form-button">Send A Message</button>
-            </form>
+                <button onClick={sendMessage} className="contact-form-button">Send A Message</button>
+                <br />
+                <p>{message}</p>
         </div>
 
     </div>

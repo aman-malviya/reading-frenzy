@@ -31,11 +31,13 @@ function Carousel(props){
     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-pause='hover'>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <CarouselWindow category="Reading Frenzy" title="Welcome to the Reading Frenzy Blog" content="" background="Assets/6.jpg" />
+      <div style={{'backgroundImage':'url(Assets/bulb.png)', 'backgroundSize':'cover', 'backgroundPosition':'center', 'minHeight':'401px'}}>
+        <CarouselWindow category="Quizzers' Club MANIT" title="Welcome to the Quizzers' Club MANIT's Blog" content="" linkDisplay='none' />
+      </div>
     </div>
     {blogList.map(blog=>{
         return <div className="carousel-item">
-            <CarouselWindow category={blog[1].category} title={blog[1].title} content={blog[1].content.substring(0,200)} id={blog[0]} bg={blog[1].time} />
+            <CarouselWindow category={blog[1].category} title={blog[1].title} content={blog[1].content.substring(0,100)+'...'} id={blog[0]} bg={blog[1].time} />
         </div>
     })}
   </div>

@@ -44,7 +44,7 @@ function ParticularCategoryPage() {
                 <div className='col-lg-8'>
                     <div className='row'>
                         {showPosts.map(post=>{
-                            return <div className='col-lg-6'><FeaturedTile title={post[1].title} category={post[1].category} id={post[0]} bg={post[1].time} /></div>
+                            return <div className='col-lg-6'><FeaturedTile title={post[1].title} category={post[1].category} id={post[0]} bg={post[1].time} /><br /></div>
                         })}
                     </div>
                 </div>

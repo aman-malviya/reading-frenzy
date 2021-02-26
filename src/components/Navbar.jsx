@@ -5,8 +5,8 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 function Navbar(){
     return(<div className='d-flex justify-content-center'>
     <nav class="navbar navbar-expand-lg">
-
       <button
+        style={{'backgroundColor':'#000', 'color':'#fff', 'margin':'auto'}}
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -16,7 +16,6 @@ function Navbar(){
         aria-label="Toggle navigation"
       >
         <MenuRoundedIcon />
-
       </button>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">

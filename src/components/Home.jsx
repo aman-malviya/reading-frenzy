@@ -11,10 +11,14 @@ function Home() {
 
     return(<div>
       <Header />
-      <div style={{'padding':'0 10%'}}><Carousel /></div>
-      {/*<div style={{'padding':'0 10%'}}><Categories /></div>*/}
-      <div style={{'padding':'0 10%'}}><Featured /></div>
-      <div style={{'padding':'0 10%'}} className='row'>
+      <div style={{'padding':'0 5%'}}><Carousel /></div>
+      <br />
+      <div style={{'padding':'0 5%'}}><Categories /></div>
+      <br />
+      <br />
+      <div style={{'padding':'0 5%'}}><Featured /></div>
+      <br />
+      <div style={{'padding':'0 5%'}} className='row'>
       <div className='col-lg-8'><Latest /></div>
       <div className='col-lg-4'><AboutSection /></div>
       </div>

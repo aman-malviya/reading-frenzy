@@ -32,9 +32,11 @@ body{
 }
 .navbar-brand:hover{
     color:#000;
-    opacity:0.8;
-    transform:scale(1.02);
+    opacity:0.6;
     text-decoration:none !important;
+}
+.navbar-toggler:focus{
+    outline:none;
 }
 @media (max-width:1000px){
     .social-media-hide{

@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import LatestTile from './LatestTile'
-import posts from '../posts'
 import {useParams} from 'react-router-dom'
 import firebase from '../fire'
 
@@ -23,7 +21,7 @@ function ParticularPostPage(){
     })
     return(<div>
     <Header />
-    <div style={{'padding':'0 10%'}}>
+    <div style={window.innerWidth<600?{'padding':'0'}:{'padding':'0 20%'}}>
     <div style={{'padding':'0 0 0 0'}}>
     <div className='latest-tile' style={{'backgroundImage':'url('+URL+')', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
     <div className='latest-blog-type'>
@@ -32,9 +30,9 @@ function ParticularPostPage(){
     </div>
     <div className='latest-blog-described'>
     <h2 style={{'fontFamily':'"EB Garamond", serif'}}>{newBlog.title}</h2>
-    <p style={{'padding':'2% 0', 'opacity':'0.9', 'letterSpacing':'0.7px', 'whiteSpace':'pre-wrap'}}>{newBlog.content}</p>
+    <p style={{'padding':'2% 0', 'opacity':'0.9', 'letterSpacing':'0.7px', 'whiteSpace':'pre-wrap', 'textAlign':'justify'}}>{newBlog.content}</p>
     <hr style={{'border':'0', 'borderTop':'1px solid rgba(0,0,0,0.3)', 'marginTop':'8%'}}></hr>
-    <p style={{'fontFamily':'"EB Garamond", serif', 'opacity':"0.8", 'display':'inline', 'fontSize':'1rem'}}>{newBlog.author}<span style={{'float':'right'}}>{newBlog.date}</span></p>
+    <p style={{'fontFamily':'"EB Garamond", serif', 'opacity':"0.8", 'display':'inline', 'fontSize':'0.8rem'}}>{newBlog.author}<span style={{'float':'right'}}>{newBlog.date}</span></p>
     </div>
     </div>
     {/*<LatestTile author={newBlog.author} date={newBlog.date} bg='/Assets/6.jpg' category={newBlog.category} title={newBlog.title} content={newBlog.content} />*/}
