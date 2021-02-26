@@ -8,14 +8,25 @@ function Carousel(props){
 
   const [blogList, setBlogList]=useState([]);
     useEffect(()=>{
-       firebase.firestore().collection("Blogs").where("category", '==', 'quizzing').onSnapshot(snapshot=>{
-         snapshot.docs.forEach(doc=>{
-           const blogs=[]
-           blogs.push(doc.data())
-           setBlogList(blogs)
+       firebase.firestore().collection("Blogs").where("carousel", '==', 'yes').limit(3).onSnapshot(snapshot=>{
+         let blogs=[]
+         snapshot.docs.map(doc=>{
+           blogs.push([doc.id,doc.data()])
          })
+         setBlogList(blogs)
        })
     },[]);
+    // firebase.storage().ref().child('images/').listAll().then((result)=>{
+    //   result.items.forEach((imageRef)=>{
+    //     console.log(imageRef.name)
+    //     imageRef.getDownloadURL().then(url=>{
+    //       console.log(url)
+    //     })
+    //   })
+    // })
+    // const [URL, setURL]=useState([])
+      
+    
     return (<div>
     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-pause='hover'>
   <div className="carousel-inner">
@@ -24,7 +35,7 @@ function Carousel(props){
     </div>
     {blogList.map(blog=>{
         return <div className="carousel-item">
-            <CarouselWindow category={posts[2].postCategory} title={posts[2].postTitle} content={posts[2].postContent.substring(0,200)}  background="Assets/4.jpg" />
+            <CarouselWindow category={blog[1].category} title={blog[1].title} content={blog[1].content.substring(0,200)} id={blog[0]} bg={blog[1].time} />
         </div>
     })}
   </div>

@@ -6,22 +6,21 @@ import firebase from '../fire'
 function Featured(){
     const [blogList, setBlogList]=useState([]);
     useEffect(()=>{
-       firebase.firestore().collection("Blogs").where("featured", '==', 'yes').onSnapshot(snapshot=>{
+       firebase.firestore().collection("Blogs").where("featured", '==', 'yes').limit(3).onSnapshot(snapshot=>{
+         const blogs=[]
          snapshot.docs.forEach(doc=>{
-           const blogs=[]
-           blogs.push(doc.data())
-           setBlogList(blogs)
+           blogs.push([doc.id,doc.data()])
          })
+        setBlogList(blogs)
        })
     },[]);
-    console.log(blogList)
     return(<div className='featured-section'>
     <h1 style={{'fontFamily':'"EB Garamond", serif'}}>Featured</h1>
     <hr style={{'border':'0', 'borderTop':'1px solid rgba(0,0,0,0.3)'}} />
     <div className="row">
-        <div className='col-lg col-md-6'><FeaturedTile title={posts[0].postTitle} category={posts[0].postCategory} bg='Assets/3.jpg' /></div>
-        <div className='col-lg col-md-6'><FeaturedTile title={posts[1].postTitle} category={posts[1].postCategory} bg='Assets/4.jpg' /></div>
-        <div className='col-lg col-md-6'><FeaturedTile title={posts[2].postTitle} category={posts[2].postCategory} bg='Assets/5.jpg' /></div>
+        {blogList.map(blog=>{
+          return <div className='col-lg col-md-6'><FeaturedTile title={blog[1].title} category={blog[1].category} id={blog[0]} bg={blog[1].time} /></div>
+        })}
     </div>
     </div>)
 }

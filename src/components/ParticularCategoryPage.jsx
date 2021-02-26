@@ -16,14 +16,25 @@ function ParticularCategoryPage() {
     useEffect(()=>{
         firebase.firestore().collection("Blogs").where("category", '==', category).onSnapshot(snapshot=>{
             let categoryPosts=[]
-            snapshot.docs.forEach(doc=>categoryPosts.push(doc.data()))
+            snapshot.docs.forEach(doc=>categoryPosts.push([doc.id,doc.data()]))
             setShowPosts(categoryPosts)
         })
     },[])
+    const [blogList, setBlogList]=useState([])
+    useEffect(()=>{
+       firebase.firestore().collection("Blogs").where("category", '==', category).where("trending", '==', 'yes').limit(5).onSnapshot(snapshot=>{
+         const blogs=[]
+         snapshot.docs.forEach(doc=>{
+           blogs.push([doc.id,doc.data()])
+         })
+        setBlogList(blogs)
+       })
+    },[]);
     return(<div>
         <Header />
-        <div style={{'padding':'0 5%'}}>
-            <CarouselWindow category={posts[0].postCategory} title={posts[0].postTitle} content={posts[1].postContent.substring(0,200)}  background="Assets/2.jpg" linkDisplay='none' />
+        <div style={{'padding':'0 10%'}}>
+            {/*<CarouselWindow category={newBlog.category} title={newBlog.title
+            } content={newBlog.content.substring(0,200)}  background="Assets/2.jpg" linkDisplay='none' />*/}
             <br />
             <br />
             <h6 style={{'textTransform':'upperCase', 'fontSize':'0.9rem', 'color': '#000', 'opacity':'0.6', 'letterSpacing':'0.5px'}}>Category</h6>
@@ -33,14 +44,15 @@ function ParticularCategoryPage() {
                 <div className='col-lg-8'>
                     <div className='row'>
                         {showPosts.map(post=>{
-                            return <div className='col-lg-6'><FeaturedTile title={post.title} category={post.category} bg='Assets/2.jpg' /></div>
+                            return <div className='col-lg-6'><FeaturedTile title={post[1].title} category={post[1].category} id={post[0]} bg={post[1].time} /></div>
                         })}
                     </div>
                 </div>
                 <div className='col-lg-4'>
-                    <h2 style={{'fontFamily':'"EB Garamond",serif'}}>Latest of {category.charAt(0).toUpperCase()+category.slice(1)}</h2>
-                    <LikedTile title={posts[0].postTitle} bg={posts[0].postBg} />
-                    <LikedTile title={posts[1].postTitle} bg={posts[1].postBg} />
+                    <h2 style={{'fontFamily':'"EB Garamond",serif'}}>Trending in {category.charAt(0).toUpperCase()+category.slice(1)}</h2>
+                    {blogList.map((blog,i)=>{
+                        return <a href={'/posts/'+blog[0]} style={{'color':'#000', 'textDecoration':'none'}}><LikedTile num={i+1} title={blog[1].title} bg={blog[1].time} /></a>
+                    })}
                     <br />
                     <h3 style={{'fontFamily':'"EB Garamond",serif'}}>Follow Us</h3>
                     <SocialMedia border='1px solid rgba(0,0,0,0.8)' />

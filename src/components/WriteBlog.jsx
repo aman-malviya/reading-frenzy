@@ -13,10 +13,13 @@ function WriteBlog() {
     const [author, setAuthor]=useState("");
     const [title, setTitle]=useState("");
     const [content, setContent]=useState("");
-    const [rating, setRating]=useState("");
+    const [carousel, setCarousel]=useState("");
+    const [trending, setTrending]=useState("");
+    const [image, setImage]=useState("");
 
 
     const publishTheBlog=()=>{
+        let time=new Date().getTime()
         firebase.firestore().collection("Blogs").doc().set({
             category:category,
             editorChoice:editorChoice,
@@ -24,16 +27,14 @@ function WriteBlog() {
             author:author,
             title:title,
             content:content,
-            timeStamp:new Date().getTime(),
-            rating:+rating
+            date:new Date().toDateString(),
+            carousel:carousel,
+            trending:trending,
+            time:time
         })
         .then(() => {
             document.getElementById("message").style.visibility="visible"
-            setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}><i style={{'color':'#38b000'}} class="fa fa-check-circle" aria-hidden="true"></i> Blog published</p>)
-            setTimeout(() => {
-                setMessage("")
-                document.getElementById("message").style.visibility="hidden"
-            }, 3000);
+            setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}>Uploading Image ...</p>)
         })
         .catch((error) => {
             setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}><i style={{'color':'red'}} class="fad fa-exclamation-circle"></i> Some error has occured</p>)
@@ -41,29 +42,18 @@ function WriteBlog() {
                 setMessage("")
             }, 3000);
         });
-        // const blogRef=firebase.database().ref("Blog");
-        // const blog={
-        //     category,
-        //     editorChoiceOrNot,
-        //     featuredOrNot,
-        //     author,
-        //     title,
-        //     content
-        // }
-        // blogRef.push(blog, (err)=>{
-        //     if(err){
-        //         console.log(err);
-        //         setMessage("Some error has occured.")
-        //         setTimeout(() => {
-        //             setMessage("");
-        //         }, 3000);
-        //     }else{
-        //         setMessage("Question successfully saved to the Database.");
-        //         setTimeout(() => {
-        //             setMessage("");
-        //         }, 3000);
-        //     }
-        // });
+        const img=document.getElementById("photo").files[0]
+        var metadata = {
+            contentType: img.type,
+        };
+        firebase.storage().ref().child('images/'+time).put(img, metadata).then((snapshot)=>{
+            setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}><i style={{'color':'#38b000'}} class="fa fa-check-circle" aria-hidden="true"></i> Blog published</p>)
+            setTimeout(() => {
+                setMessage("")
+                document.getElementById("message").style.visibility="hidden"
+            }, 3000);
+            console.log(snapshot.ref.fullPath)
+        })
     }
     
     return (<div>
@@ -79,14 +69,14 @@ function WriteBlog() {
                 <select value={category} onChange={e=>setCategory(e.target.value)} className="form-control" type='text' style={{'width':'100%', 'background':'none'}} required >
                 <option value="">Select a Category</option>
                 <option value="life-style">Life Style</option>
-                <option value="Travel">Travel</option>
-                <option value="Science">Science</option>
-                <option value="Recipes">Recipes</option>
+                <option value="travel">Travel</option>
+                <option value="science">Science</option>
+                <option value="recipes">Recipes</option>
                 <option value="quizzing">Quizzing</option>
                 </select>
                 </div>
                 <div className="form-group">
-                <label>Mention in the Editor's Choice?</label>
+                <label>Show in Editor's Choice?</label>
                 <select value={editorChoice} onChange={e=>setEditorChoice(e.target.value)} className="form-control" type='text' style={{'width':'100%', 'background':'none'}} required >
                 <option value="">Select</option>
                 <option value="yes">Yes</option>
@@ -94,8 +84,24 @@ function WriteBlog() {
                 </select>
                 </div>
                 <div className="form-group">
-                <label>Mention in the Featured?</label>
+                <label>Show in Featured?</label>
                 <select value={featured} onChange={e=>setFeatured(e.target.value)} className="form-control" type='text' style={{'width':'100%', 'background':'none'}} required >
+                <option value="">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                </select>
+                </div>
+                <div className="form-group">
+                <label>Show in Carousel?</label>
+                <select value={carousel} onChange={e=>setCarousel(e.target.value)} className="form-control" type='text' style={{'width':'100%', 'background':'none'}} required >
+                <option value="">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                </select>
+                </div>
+                <div className="form-group">
+                <label>Show in Trending?</label>
+                <select value={trending} onChange={e=>setTrending(e.target.value)} className="form-control" type='text' style={{'width':'100%', 'background':'none'}} required >
                 <option value="">Select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
@@ -112,7 +118,7 @@ function WriteBlog() {
                 <textarea value={content} onChange={e=>setContent(e.target.value)} style={{'width':'100%', 'backgroundColor':'rgba(0,0,0,0)'}} placeholder="Content" required rows='3' />
                 </div>
                 <div className="form-group">
-                <input value={rating} onChange={e=>setRating(e.target.value)} type='number' style={{'width':'100%', 'background':'none'}} placeholder="How much would you rate this blog out of 10?" max="10" min="0" required />
+                <input id="photo" value={image} onChange={e=>setImage(e.target.value)} type='file' style={{'width':'100%', 'background':'none'}} placeholder="Title" required />
                 </div>
                 <br />
                 <button onClick={publishTheBlog} className="contact-form-button">Publish</button>
