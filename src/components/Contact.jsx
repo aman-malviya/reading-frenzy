@@ -37,7 +37,7 @@ function Contact() {
     return(<div style={{'backgroundColor':'fff'}}>
     <Header />
     <div style={{'padding':'0 5%'}}>
-        <div style={{'backgroundImage':'url(Assets/2.jpg)', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
+        <div style={{'backgroundImage':'url(https://firebasestorage.googleapis.com/v0/b/reading-frenzy.appspot.com/o/static%2F2.jpg?alt=media&token=9be2ec0d-c6f6-4d91-b614-780ae225d65d)', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
             <CarouselWindow category='Get in Touch' title='Contact Us' content={posts[1].postContent.substring(0,200)} linkDisplay='none' />
         </div>
     </div>

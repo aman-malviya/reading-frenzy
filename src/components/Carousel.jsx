@@ -31,7 +31,7 @@ function Carousel(props){
     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-pause='hover' data-interval="10000">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <div style={{'backgroundImage':'url(Assets/bulb.png)', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
+      <div style={{'backgroundImage':'url(https://firebasestorage.googleapis.com/v0/b/reading-frenzy.appspot.com/o/static%2Fbulb.png?alt=media&token=a2ab8eff-aedf-466b-b9f7-e2c32545da82)', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
         <CarouselWindow category="Quizzers' Club MANIT" title="Welcome to the Quizzers' Club MANIT's Blog" content="" linkDisplay='none' />
       </div>
     </div>

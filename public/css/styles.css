@@ -1,3 +1,8 @@
+/* @font-face{
+    font-family:monobaiti;
+    src: url(https://firebasestorage.googleapis.com/v0/b/reading-frenzy.appspot.com/o/fonts%2Fmonbaiti.ttf?alt=media&token=54214ad7-7b15-4463-a3ba-a3adac3a24cf);
+} */
+
 body{
     padding:0;
     color:#000;
@@ -171,7 +176,7 @@ body{
   padding: 5px 5px 5px 10px;
 }
 .social-media ul{
-    padding:0 2%;
+    padding:5% 2% 0;
 }
 .social-media ul li{
   padding:10px 20px 10px 0;

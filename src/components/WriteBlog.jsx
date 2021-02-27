@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Brand from './Brand'
 import Footer from './Footer'
 import firebase from '../fire'
@@ -16,7 +16,18 @@ function WriteBlog() {
     const [carousel, setCarousel]=useState("");
     const [trending, setTrending]=useState("");
     const [image, setImage]=useState("");
-
+    
+    //category fetch
+    const [categories, setCategories]=useState([])
+    useEffect(()=>{
+        firebase.firestore().collection("Categories").onSnapshot(snapshot=>{
+            let catArray=[]
+            snapshot.docs.map(doc=>{
+                catArray.push(doc.data())
+            })
+            setCategories(catArray)
+        })
+    },[])
     const publishTheBlog=()=>{
         let time=new Date().getTime()
         const img=document.getElementById("photo").files[0]
@@ -86,11 +97,9 @@ function WriteBlog() {
                 <label>Blog Category</label>
                 <select value={category} onChange={e=>setCategory(e.target.value)} className="form-control" type='text' style={{'width':'100%', 'background':'none'}} required >
                 <option value="">Select a Category</option>
-                <option value="life-style">Life Style</option>
-                <option value="travel">Travel</option>
-                <option value="science">Science</option>
-                <option value="technology">Technology</option>
-                <option value="quizzing">Quizzing</option>
+                {categories.map(cat=>{
+                    return  <option value={cat.param}>{cat.category}</option>
+                })}
                 </select>
                 </div>
                 <div className="form-group">

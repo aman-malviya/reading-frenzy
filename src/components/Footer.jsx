@@ -6,7 +6,7 @@ let date=new Date();
 let year=date.getFullYear();
 function Footer(){
     return(<div style={{'backgroundColor':'#000', 'padding':'2% 0'}}>
-  <a style={{"text-align":'center', 'color':'#fff'}} class="navbar-brand" href="/"><span>QCM</span></a>
+  <a style={{"text-align":'center', 'color':'#fff'}} class="navbar-brand" href="/"><span style={{'font-family': "'Akaya Kanadaka', cursive", 'fontWeight':'500'}}>QCM</span></a>
     <div className="d-flex justify-content-center">
     <a style={{'color':'#fff', 'padding':'1% 1.2%'}} href="/categories">Categories</a>
     <a style={{'color':'#fff', 'padding':'1% 1.2%'}} href="/about">About Us</a>
