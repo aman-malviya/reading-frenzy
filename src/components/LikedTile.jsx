@@ -14,9 +14,9 @@ function LikedTile(props){
     <div className='grid-item d-flex align-items-center'>
     <h5 style={{'fontFamily':'"EB Garamond",serif', 'textAlign':'left'}}>{props.title}</h5>
     </div>
-    <div className='grid-item d-flex align-items-center'>
+    <div className='grid-item d-flex align-items-center' style={{'justifyContent':'flex-end'}}>
     <div className='liked-img'>
-    <img alt='' width='100%' src={URL} />
+        <img alt='' width='100%' src={URL} />
     </div>
     </div>
 

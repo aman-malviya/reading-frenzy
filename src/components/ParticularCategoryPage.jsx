@@ -13,6 +13,8 @@ import firebase from '../fire'
 function ParticularCategoryPage() {
     let {category}=useParams();
     let [showPosts, setShowPosts]=useState([])
+    let [current, setCurrent]=useState()
+
     useEffect(()=>{
         firebase.firestore().collection("Blogs").where("category", '==', category).onSnapshot(snapshot=>{
             let categoryPosts=[]
@@ -27,14 +29,16 @@ function ParticularCategoryPage() {
          snapshot.docs.forEach(doc=>{
            blogs.push([doc.id,doc.data()])
          })
+        if(blogs.length){
+            setCurrent(<CarouselWindow category={blogs[0][1].category} title={blogs[0][1].title} content={blogs[0][1].content.substring(0,100)+'...'} id={blogs[0][0]} bg={blogs[0][1].time} />)
+        }
         setBlogList(blogs)
        })
     },[]);
     return(<div>
         <Header />
         <div style={{'padding':'0 5%'}}>
-            {/*<CarouselWindow category={newBlog.category} title={newBlog.title
-            } content={newBlog.content.substring(0,200)}  background="Assets/2.jpg" linkDisplay='none' />*/}
+            {current}
             <br />
             <br />
             <h6 style={{'textTransform':'upperCase', 'fontSize':'0.9rem', 'color': '#000', 'opacity':'0.6', 'letterSpacing':'0.5px'}}>Category</h6>
