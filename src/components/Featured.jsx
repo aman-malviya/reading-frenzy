@@ -17,7 +17,7 @@ function Featured(){
     return(<div className='featured-section'>
     <h1 style={{'fontFamily':'"EB Garamond", serif'}}>Featured</h1>
     <hr style={{'border':'0', 'borderTop':'1px solid rgba(0,0,0,0.3)'}} />
-    <div className="row">
+    <div className="row row-eq-height">
         {blogList.map(blog=>{
           return <div className='col-lg col-md-6'><FeaturedTile title={blog[1].title} category={blog[1].category} id={blog[0]} bg={blog[1].time} /></div>
         })}

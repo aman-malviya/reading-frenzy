@@ -28,10 +28,10 @@ function Carousel(props){
       
     
     return (<div>
-    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-pause='hover'>
+    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-pause='hover' data-interval="10000">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <div style={{'backgroundImage':'url(Assets/bulb.png)', 'backgroundSize':'cover', 'backgroundPosition':'center', 'minHeight':'401px'}}>
+      <div style={{'backgroundImage':'url(Assets/bulb.png)', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
         <CarouselWindow category="Quizzers' Club MANIT" title="Welcome to the Quizzers' Club MANIT's Blog" content="" linkDisplay='none' />
       </div>
     </div>

@@ -31,8 +31,8 @@ function Navbar(){
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link hvr-underline-reveal" href="/recipes">
-              Recipes
+            <a className="nav-link hvr-underline-reveal" href="/technology">
+              Technology
             </a>
           </li>
           <li className="nav-item">

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Brand from './Brand'
 import Footer from './Footer'
 import firebase from '../fire'
-
+import {CircularProgress} from '@material-ui/core'
 
 
 function WriteBlog() {
@@ -16,7 +16,6 @@ function WriteBlog() {
     const [carousel, setCarousel]=useState("");
     const [trending, setTrending]=useState("");
     const [image, setImage]=useState("");
-
 
     const publishTheBlog=()=>{
         let time=new Date().getTime()
@@ -43,7 +42,7 @@ function WriteBlog() {
             })
             .then(() => {
                 document.getElementById("message").style.visibility="visible"
-                setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}>Uploading Image ...</p>)
+                setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}>Publishing blog  <CircularProgress color="#000" size="20px" /></p>)
             })
             .catch((error) => {
                 setMessage(<p style={{'color':'#000', 'padding':'10px 30px', 'margin':'auto'}}><i style={{'color':'red'}} class="fad fa-exclamation-circle"></i> Some error has occured</p>)
@@ -90,7 +89,7 @@ function WriteBlog() {
                 <option value="life-style">Life Style</option>
                 <option value="travel">Travel</option>
                 <option value="science">Science</option>
-                <option value="recipes">Recipes</option>
+                <option value="technology">Technology</option>
                 <option value="quizzing">Quizzing</option>
                 </select>
                 </div>
@@ -141,7 +140,7 @@ function WriteBlog() {
                 </div>
                 <br />
                 <button onClick={publishTheBlog} className="contact-form-button">Publish</button>
-                <div id="message" style={{'position':'fixed', 'bottom':'20px', 'left':'20px', 'backgroundColor':'#fff','display':'flex', 'justifyContent':'center', 'alignItems':'center', 'visibility':'hidden', 'borderRadius':'8px', 'border':'2px solid #a7aaa4'}}>
+                <div id="message" style={{'position':'fixed', 'bottom':'20px','left':'50%','transform':'translateX(-50%)', 'backgroundColor':'#fff','display':'flex', 'justifyContent':'center', 'alignItems':'center', 'visibility':'hidden', 'borderRadius':'8px', 'border':'2px solid #4ecca3', 'z-index':'66', 'boxShadow':'1px 1px 18px 4px rgba(255,255,255,0.2)'}}>
                     {message}
                 </div>
         </div>

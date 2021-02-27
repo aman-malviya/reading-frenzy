@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from './Home'
 import About from './About'
@@ -6,38 +6,10 @@ import Contact from './Contact'
 import CategoryPage from './CategoryPage'
 import ParticularPostPage from './ParticularPostPage'
 import ParticularCategoryPage from './ParticularCategoryPage'
-import firebase from '../fire'
 import WriteBlog from './WriteBlog'
-import Blog1 from './blogs/blog1'
-
 
 function App(){
-    const [todoList, setTodoList]=useState();
-    // function handleChange(e){
-    //     setTitle(e.target.value);
-    // }
-    // function handleClick(){
-    //     const todoRef=firebase.database().ref("Todo");
-    //     const todo={
-    //         title,
-    //         complete:false,
-    //     }
-    //     todoRef.push(todo);
-    // }
-    // const [todoList, setTodoList]=useState('');
 
-    // useEffect(function(){
-    //    const todoRef=firebase.database().ref("Todo");
-    //    todoRef.on("value", function(snapshot) {
-    //        const todos=snapshot.val();
-    //        const todoList=[];
-    //        for(let id in todos){
-    //            todoList.push(todos[id]);
-    //        }
-    //        setTodoList(todoList);
-    //    });
-
-    // });
     return(<div>
     <Router>
     <Switch>
@@ -48,7 +20,6 @@ function App(){
     <Route path='/categories'><CategoryPage /></Route>
     <Route path='/posts/:id' exact><ParticularPostPage /></Route>
     <Route path='/:category' exact><ParticularCategoryPage /></Route>
-    <Route path='/blogs/blog1' exact><Blog1 /></Route>
     </Switch>
     </Router>
     </div>)

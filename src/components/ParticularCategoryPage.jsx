@@ -32,7 +32,7 @@ function ParticularCategoryPage() {
     },[]);
     return(<div>
         <Header />
-        <div style={{'padding':'0 10%'}}>
+        <div style={{'padding':'0 5%'}}>
             {/*<CarouselWindow category={newBlog.category} title={newBlog.title
             } content={newBlog.content.substring(0,200)}  background="Assets/2.jpg" linkDisplay='none' />*/}
             <br />
