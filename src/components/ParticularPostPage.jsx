@@ -45,7 +45,7 @@ function ParticularPostPage(){
                 </div>
             </div>
         </div>
-        <div style={{'padding':'1% 20%'}}>
+        <div style={window.innerWidth<600?{'padding':'2% 0'}:{'padding':'2% 20%'}}>
             {blogList.length?<h2 style={{'fontFamily':'"EB Garamond", serif'}}>More from {newBlog.author}</h2>:<p></p>}
             {blogList.map((blog, i)=>{
                 return  <a style={{'color':'#000', 'textDecoration':'none'}} href={'/posts/'+blog[0]}><LikedTile num={i+1} title={blog[1].title} bg={blog[1].time} /></a>
