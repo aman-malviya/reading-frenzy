@@ -4,10 +4,10 @@ import SocialMediaLink from './SocialMediaLink'
 function SocialMedia(props){
     return(<div className='social-media'>
     <ul className='d-flex' style={{'listStyle':'none'}}>
-    <li><SocialMediaLink border={props.border} bg={props.bg} class='fab fa-facebook-f' /></li>
-    <li><SocialMediaLink border={props.border} bg={props.bg} class='fab fa-instagram' /></li>
-    <li><SocialMediaLink border={props.border} bg={props.bg} class='fab fa-linkedin-in' /></li>
-    <li><SocialMediaLink border={props.border} bg={props.bg} class='fab fa-twitter' /></li>
+    <li><SocialMediaLink url='https://www.facebook.com/Quizofficial.manit/' border={props.border} bg={props.bg} class='fab fa-facebook-f' /></li>
+    <li><SocialMediaLink url='https://instagram.com/quizzersclub?igshid=way1wjiqu8pp' border={props.border} bg={props.bg} class='fab fa-instagram' /></li>
+    <li><SocialMediaLink url='https://www.linkedin.com/company/quizzers-club-manit' border={props.border} bg={props.bg} class='fab fa-linkedin-in' /></li>
+    <li><SocialMediaLink url='/contact' border={props.border} bg={props.bg} class="far fa-envelope" /></li>
     </ul>
     </div>)
 }

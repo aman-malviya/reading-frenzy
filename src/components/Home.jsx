@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Header from './Header'
 import Carousel from './Carousel'
 import Categories from './Categories'
@@ -6,10 +6,21 @@ import Featured from './Featured'
 import Latest from './Latest'
 import AboutSection from './AboutSection'
 import Footer from './Footer'
+// import Loader from './Loader'
+
 
 function Home() {
+    // const [loading, setLoading]=useState(true)
+    // useEffect(()=>{
+    //   document.onreadystatechange = function () {
+    //     if (document.readyState === 'complete') {
+    //         setLoading(false)
+    //     }
+    //   }
+    // })
 
-    return(<div>
+    return(
+    <div>
       <Header />
       <div style={{'padding':'0 5%'}}><Carousel /></div>
       <br />

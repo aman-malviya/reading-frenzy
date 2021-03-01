@@ -38,7 +38,7 @@ function Contact() {
     <Header />
     <div style={{'padding':'0 5%'}}>
         <div style={{'backgroundImage':'url(https://firebasestorage.googleapis.com/v0/b/reading-frenzy.appspot.com/o/static%2F2.jpg?alt=media&token=9be2ec0d-c6f6-4d91-b614-780ae225d65d)', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
-            <CarouselWindow category='Get in Touch' title='Contact Us' content={posts[1].postContent.substring(0,200)} linkDisplay='none' />
+            <CarouselWindow category='Get in Touch' title='Contact Us' content="Drop us a line. We would love to hear from you. " linkDisplay='none' />
         </div>
     </div>
     <br />
@@ -51,16 +51,16 @@ function Contact() {
             <p>Address</p>
             <h6>NIT Bhopal,<br />Madhya Pradesh,<br />India</h6>
         </div>
-        <div className="contact-details">
+        {/*<div className="contact-details">
             <i className="fas fa-phone-alt"></i>
             <p>Call Me</p>
             <h6>+91 6264937094</h6>
             <h6>+91 8269366460</h6>
-        </div>
+        </div>*/}
         <div className="contact-details">
             <i className="far fa-envelope"></i>
-            <p>Email Address</p>
-            <h6>amanmalv09@gmail.com</h6>
+            <p>Mail Us</p>
+            <h6>quizzersclubmanit@gmail.com</h6>
         </div>
     </div>
         <div className="col-lg-8 contact-panel">

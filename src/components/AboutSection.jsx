@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import LikedTile from './LikedTile'
-import posts from '../posts'
 import SocialMedia from './SocialMedia'
 import DownCategoryPanel from './DownCategoryPanel'
 import firebase from '../fire'
@@ -23,7 +22,7 @@ function AboutSection(){
     <div className="about-img">
     <img alt='logo-img' width='100%' src='Assets/logo.png' />
     </div>
-    <p style={{'textAlign':'center', 'padding':'5%'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet</p>
+    <p style={{'textAlign':'center', 'padding':'5%', 'letterSpacing':'0.5px','font-family':"'Karla', sans-serif"}}>Quizzers' Club MANIT (QCM) is the official quizzing club of Maulana Azad Institute of Technology, Bhopal. QCM is formed by a bunch of quizzing prodigies of MANIT in Feb 2013. We are a group of enthusiastic quizzers, executives, designers and web developers. The purpose of the society is to promote quizzing, group discussion, debate to increase the general awareness in the student community.</p>
     <br /><br />
     {/*<h2 style={{'fontFamily':'"EB Garamond",serif'}}>Liked Posts</h2>
     <LikedTile title={posts[0].postTitle} bg={posts[0].postBg} />
