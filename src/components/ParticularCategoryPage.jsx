@@ -7,10 +7,10 @@ import FeaturedTile from './FeaturedTile'
 import LikedTile from './LikedTile'
 import SocialMedia from './SocialMedia'
 import DownCategoryPanel from './DownCategoryPanel'
-import posts from '../posts'
 import firebase from '../fire'
 
-function ParticularCategoryPage() {
+export default function ParticularCategoryPage() {
+
     let {category}=useParams();
     let [showPosts, setShowPosts]=useState([])
     let [current, setCurrent]=useState()
@@ -22,7 +22,9 @@ function ParticularCategoryPage() {
             setShowPosts(categoryPosts)
         })
     },[])
+
     const [blogList, setBlogList]=useState([])
+
     useEffect(()=>{
        firebase.firestore().collection("Blogs").where("category", '==', category).where("trending", '==', 'yes').limit(5).onSnapshot(snapshot=>{
          const blogs=[]
@@ -35,6 +37,7 @@ function ParticularCategoryPage() {
         setBlogList(blogs)
        })
     },[]);
+
     return(<div>
         <Header />
         <div style={{'padding':'0 5%'}}>
@@ -48,14 +51,19 @@ function ParticularCategoryPage() {
                 <div className='col-lg-8'>
                     <div className='row'>
                         {showPosts.map(post=>{
-                            return <div className='col-lg-6'><FeaturedTile title={post[1].title} category={post[1].category} id={post[0]} bg={post[1].time} /><br /></div>
+                            return <div className='col-lg-6'>
+                                <FeaturedTile title={post[1].title} category={post[1].category} id={post[0]} bg={post[1].time} />
+                                <br />
+                            </div>
                         })}
                     </div>
                 </div>
                 <div className='col-lg-4'>
                     <h2 style={{'fontFamily':'"EB Garamond",serif'}}>Trending in {category.charAt(0).toUpperCase()+category.slice(1)}</h2>
                     {blogList.map((blog,i)=>{
-                        return <a href={'/posts/'+blog[0]} style={{'color':'#000', 'textDecoration':'none'}}><LikedTile num={i+1} title={blog[1].title} bg={blog[1].time} /></a>
+                        return <a href={'/posts/'+blog[0]} style={{'color':'#000', 'textDecoration':'none'}}>
+                            <LikedTile num={i+1} title={blog[1].title} bg={blog[1].time} />
+                        </a>
                     })}
                     <br />
                     <h3 style={{'fontFamily':'"EB Garamond",serif'}}>Follow Us</h3>
@@ -69,4 +77,3 @@ function ParticularCategoryPage() {
         <Footer />
     </div>)
 }
-export default ParticularCategoryPage;

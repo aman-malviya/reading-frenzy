@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Header from './Header'
 import Carousel from './Carousel'
 import Categories from './Categories'
@@ -6,10 +6,11 @@ import Featured from './Featured'
 import Latest from './Latest'
 import AboutSection from './AboutSection'
 import Footer from './Footer'
+// import {useState, useEffect} from 'react'
 // import Loader from './Loader'
 
 
-function Home() {
+export default function Home() {
     // const [loading, setLoading]=useState(true)
     // useEffect(()=>{
     //   document.onreadystatechange = function () {
@@ -22,20 +23,27 @@ function Home() {
     return(
     <div>
       <Header />
-      <div style={{'padding':'0 5%'}}><Carousel /></div>
+      <div style={{'padding':'0 5%'}}>
+        <Carousel />
+      </div>
       <br />
-      <div style={{'padding':'0 5%'}}><Categories /></div>
+      <div style={{'padding':'0 5%'}}>
+        <Categories />
+      </div>
       <br />
       <br />
-      <div style={{'padding':'0 5%'}}><Featured /></div>
+      <div style={{'padding':'0 5%'}}>
+        <Featured />
+      </div>
       <br />
       <div style={{'padding':'0 5%'}} className='row'>
-      <div className='col-lg-8'><Latest /></div>
-      <div className='col-lg-4'><AboutSection /></div>
+        <div className='col-lg-8'>
+          <Latest />
+        </div>
+        <div className='col-lg-4'>
+          <AboutSection />
+        </div>
       </div>
-      <Footer />
-     
+      <Footer />  
     </div>)
 }
-
-export default Home;

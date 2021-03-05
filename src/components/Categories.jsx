@@ -2,8 +2,10 @@ import React,{useState, useEffect} from 'react'
 import CategoryTile from './CategoryTile'
 import firebase from '../fire'
 
-function Categories(){
+export default function Categories(){
+
     const [categories, setCategories]=useState([])
+    
     useEffect(()=>{
         firebase.firestore().collection("Categories").where('top', '==', true).limit(4).onSnapshot(snapshot=>{
             let catArray=[]
@@ -23,4 +25,3 @@ function Categories(){
     <a href='/categories' style={{'float':'right', 'color':'#010101'}}>View all</a>
     </div>)
 }
-export default Categories;

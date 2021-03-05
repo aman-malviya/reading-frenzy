@@ -5,7 +5,8 @@ import {useParams} from 'react-router-dom'
 import firebase from '../fire'
 import LikedTile from './LikedTile'
 
-function ParticularPostPage(){
+export default function ParticularPostPage(){
+
     let {id} =useParams();
     let [newBlog, setNewBlog]=useState([])
     let [blogList, setBlogList]=useState([])
@@ -24,17 +25,20 @@ function ParticularPostPage(){
             })
         })
     },[])
+
     const [URL, setURL]=useState("")
     firebase.storage().ref().child('images/'+newBlog.time).getDownloadURL().then(url=>{
         setURL(url)
     })
+
     return(<div>
         <Header />
         <div style={window.innerWidth<600?{'padding':'0'}:{'padding':'0 20%'}}>
             <div style={{'padding':'0 0 0 0'}}>
                 <div className='latest-tile' style={{'backgroundImage':'url('+URL+')', 'backgroundSize':'cover', 'backgroundPosition':'center'}}>
                     <div className='latest-blog-type'>
-                        <h6 style={{'textTransform':'upperCase', 'fontSize':'0.9rem', 'color': '#010101', 'opacity':'0.6','letterSpacing':'0.5px'}}>{newBlog.category}</h6>
+                        <h6 style={{'textTransform':'upperCase', 'fontSize':'0.9rem', 'color': '#010101', 'opacity':'0.6','letterSpacing':'0.5px'}}>        {newBlog.category}
+                        </h6>
                     </div>
                 </div>
                 <div className='latest-blog-described'>
@@ -56,4 +60,3 @@ function ParticularPostPage(){
     </div>
     )
 }
-export default ParticularPostPage;
