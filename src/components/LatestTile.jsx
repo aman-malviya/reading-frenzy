@@ -17,7 +17,7 @@ export default function LatestTile(props){
         </div>
         <div className='latest-blog-described'>
             <h2 style={{'fontFamily':'"EB Garamond", serif'}}>{props.title}</h2>
-            <p style={{'padding':'2% 0', 'opacity':'0.9', 'letterSpacing':'0.7px'}}>{props.content}</p>
+            <p style={{'padding':'1.5% 0', 'opacity':'0.9', 'letterSpacing':'0.7px'}}>{props.content}</p>
             <GeneralLink text='Continue Reading.....'  href={'/posts/'+props.id} />
             <hr style={{'border':'0', 'borderTop':'1px solid rgba(0,0,0,0.3)', 'marginTop':'8%'}}></hr>
             <p style={{'fontFamily':'"EB Garamond", serif', 'opacity':"0.8", 'display':'inline', 'fontSize':'0.8rem'}}>{props.author}<span style={{'float':'right'}}>{props.date}</span></p>

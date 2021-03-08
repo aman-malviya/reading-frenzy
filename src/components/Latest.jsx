@@ -6,7 +6,7 @@ export default function Latest(){
     const [blogList, setBlogList]=useState([]);
 
     useEffect(()=>{
-       firebase.firestore().collection("Blogs").limit(10).onSnapshot(snapshot=>{
+       firebase.firestore().collection("Blogs").limit(10).orderBy('time', 'desc').onSnapshot(snapshot=>{
          const blogs=[]
          snapshot.docs.forEach(doc=>{
            blogs.push([doc.id,doc.data()])

@@ -10,7 +10,7 @@ import WriteBlog from './WriteBlog'
 
 export default function App(){
 
-    return(<div>
+    return(<div className="body">
         <Router>
             <Switch>
                 <Route path='/' exact><Home /></Route>

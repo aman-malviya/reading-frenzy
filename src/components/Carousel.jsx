@@ -27,7 +27,7 @@ export default function Carousel(props){
       <div className="carousel-inner">
         <div className="carousel-item active">
           <div style={defaultSlideStyle}>
-            <CarouselWindow category="Quizzers' Club MANIT" title="Welcome to the Quizzers' Club MANIT's Blog" content="" linkDisplay='none' />
+            <CarouselWindow category="Quizzers' Club MANIT" title="Welcome to Quizzers' Club MANIT's Blog" content="" linkDisplay='none' />
           </div>
         </div>
         {blogList.map(blog=>{
