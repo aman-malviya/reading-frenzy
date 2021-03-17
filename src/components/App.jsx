@@ -11,6 +11,7 @@ import WriteBlog from './WriteBlog'
 export default function App(){
 
     return(<div className="body">
+    
         <Router>
             <Switch>
                 <Route path='/' exact><Home /></Route>
@@ -22,5 +23,6 @@ export default function App(){
                 <Route path='/:category' exact><ParticularCategoryPage /></Route>
             </Switch>
         </Router>
+        
     </div>)
 }

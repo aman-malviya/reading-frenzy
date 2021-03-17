@@ -66,16 +66,17 @@ body {
 }
 .carousel-control-prev,
 .carousel-control-next {
-  visibility: hidden;
-  transition: 0.2s !important;
-}
-.carousel:hover .carousel-control-prev {
   visibility: visible;
-  transform: translateX(-20%);
+  transition: 0.3s !important;
+  opacity:1 !important;
 }
-.carousel:hover .carousel-control-next {
-  visibility: visible;
-  transform: translateX(20%);
+.carousel-control-prev {
+  justify-content:flex-start !important;
+  transform:translateX(-15px);
+}
+.carousel-control-next {
+  justify-content:flex-end !important;
+  transform:translateX(15px);
 }
 
 /* Category Section */
@@ -84,7 +85,7 @@ body {
 }
 .categoryTile {
   margin: 4% 0;
-  padding: 20%;
+  padding: 20% 0%;
   display: flex;
   justify-content: center;
 }
@@ -93,6 +94,7 @@ body {
   padding: 5% 12%;
   outline: 1px solid #eeeeee;
   outline-offset: 5px;
+  overflow:auto;
 }
 .categoryTile div span {
   color: #010101;

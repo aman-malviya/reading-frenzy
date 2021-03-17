@@ -10,6 +10,12 @@ export default function Carousel(props){
     'backgroundSize':'cover',
     'backgroundPosition':'center'
   }
+  const arrowStyling={
+    'backgroundColor':'#4ecca3',
+    'boxShadow':'1px 1px 18px 4px rgba(255,255,255,0.2)',
+    'borderRadius':'50%',
+    'padding':'5px'
+  }
 
   const [blogList, setBlogList]=useState([]);
     useEffect(()=>{
@@ -37,13 +43,17 @@ export default function Carousel(props){
         })}
       </div>
       <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <ArrowBack style={{'fontSize':'30', 'color':'#4ecca3'}} />
+        <span style={arrowStyling}>
+          <ArrowBack style={{'fontSize':'30', 'color':'#fff'}} />
+        </span>
         <span className="sr-only">
           Previous
         </span>
       </a>
       <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <ArrowForward style={{'fontSize':'30', 'color': '#4ecca3'}} />
+        <span style={arrowStyling}>
+          <ArrowForward style={{'fontSize':'30', 'color': '#fff'}} />
+        </span>
         <span className="sr-only">
           Next
         </span>
