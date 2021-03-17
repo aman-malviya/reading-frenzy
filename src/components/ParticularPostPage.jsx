@@ -4,7 +4,7 @@ import Footer from './Footer'
 import {useParams} from 'react-router-dom'
 import firebase from '../fire'
 import LikedTile from './LikedTile'
-import {Helmet} from 'react-helmet'
+// import {Helmet} from 'react-helmet'
 
 export default function ParticularPostPage(){
 
@@ -34,13 +34,13 @@ export default function ParticularPostPage(){
 
     return(<div>
     
-        {/*SEO Optimization*/}
+        {/*SEO Optimization
         <Helmet>
             <title>{newBlog.title}</title>
             <meta name="author" content={newBlog.author} />
             <meta name="description" content={newBlog.content.substring(0,200)} />
         </Helmet>
-        {/*SEO Optimization*/}
+        SEO Optimization*/}
 
         <Header />
         <div style={window.innerWidth<600?{'padding':'0'}:{'padding':'0 20%'}}>
