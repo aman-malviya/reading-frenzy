@@ -16,11 +16,13 @@ export default function Footer(){
     }
     
     return(<div style={{'backgroundColor':'#000', 'padding':'2% 0'}}>
-        <a style={{"text-align":'center', 'color':'#fff'}} class="navbar-brand" href="/">
-            <span style={{'font-family': "'Roboto Slab', serif", 'fontWeight':'500'}}>
-                QCM
-            </span>
-        </a>
+        <div>
+            <div className="d-flex justify-content-center">
+                <a style={{"text-align":'center', 'color':'#fff', 'textDecoration':'none', 'fontSize':'2rem', 'fontFamily':'"EB Garamond", serif '}} href="/">
+                    QCM
+                </a>
+            </div>
+        </div>
         <div className="d-flex justify-content-center">
             <a style={{'color':'#fff', 'padding':'1% 1.2%'}} href="/categories">Categories</a>
             <a style={{'color':'#fff', 'padding':'1% 1.2%'}} href="/about">About Us</a>
