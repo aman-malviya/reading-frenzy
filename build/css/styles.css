@@ -332,3 +332,8 @@ textarea:focus {
 .contact-panel::-webkit-scrollbar-thumb:hover {
   background: #16697a;
 }
+
+.form-group input:active, .form-group input:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
