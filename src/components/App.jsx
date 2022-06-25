@@ -20,9 +20,9 @@ export default function App() {
           <Route path="/new-entry">
             <Entry />
           </Route>
-          {/*<Route path="/write-blog">
+          <Route path="/write-blog">
             <WriteBlog />
-          </Route>*/}
+          </Route>
           <Route path="/about">
             <About />
           </Route>
