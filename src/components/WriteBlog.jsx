@@ -3,9 +3,11 @@ import Brand from './Brand'
 import Footer from './Footer'
 import firebase from '../fire'
 import {CircularProgress} from '@material-ui/core'
+import {useLocation, useHistory} from "react-router-dom"
 
-export default function WriteBlog() { 
-    
+export default function WriteBlog() {
+    const history=useHistory();
+    const url=useLocation().search;
     const [message, setMessage]=useState("");
     const [category, setCategory]=useState("");
     const [featured, setFeatured]= useState("");
@@ -16,11 +18,22 @@ export default function WriteBlog() {
     const [carousel, setCarousel]=useState("");
     const [trending, setTrending]=useState("");
     const [image, setImage]=useState("");
+    const [render, setrender] = useState(false)
     
     //category fetch
     const [categories, setCategories]=useState([])
 
     useEffect(()=>{
+        const creds=new URLSearchParams(url);
+        const id=creds.get("id");
+        const pwd=creds.get("password");
+        firebase.firestore().collection("Credentials").get().then(snapshot=>{
+            snapshot.docs.map(doc=>{
+                if(doc.data().ID === id && doc.data().PASSWORD === pwd){
+                    setrender(true);
+                }
+            })
+        })
         firebase.firestore().collection("Categories").onSnapshot(snapshot=>{
             let catArray=[]
             snapshot.docs.map(doc=>{
@@ -28,8 +41,19 @@ export default function WriteBlog() {
             })
             setCategories(catArray)
         })
-    },[])
-
+    },[url, history])
+    
+    useEffect(() => {
+        if(!render){
+            document.getElementsByClassName("contact-form-button")[0].disabled=true;
+            document.getElementsByClassName("contact-form-button")[0].textContent="Unauthorized";
+            document.getElementsByClassName("contact-form-button")[0].style.backgroundColor="#7c7c8c";
+        }else{
+            document.getElementsByClassName("contact-form-button")[0].disabled=false;
+            document.getElementsByClassName("contact-form-button")[0].textContent="Publish";
+            document.getElementsByClassName("contact-form-button")[0].style.backgroundColor="#000";
+        }
+    }, [render])
     const publishTheBlog=()=>{
         let time=new Date().getTime()
         const img=document.getElementById("photo").files[0]
@@ -81,7 +105,7 @@ export default function WriteBlog() {
                     setMessage("")
                     document.getElementById("message").style.visibility="hidden"
                 }, 3000);
-                console.log(snapshot.ref.fullPath)
+                // console.log(snapshot.ref.fullPath)
             })
         }
     }  
@@ -101,8 +125,8 @@ export default function WriteBlog() {
         'z-index':'66', 
         'boxShadow':'1px 1px 18px 4px rgba(255,255,255,0.2)'
     }
-    
-    return (<div>
+    return (
+        <div>
         <Brand />
         <div style={window.innerWidth<500?{'padding':'0 5%'}:{'padding':'0 10%'}}>
             <div className="contact-panel">
@@ -171,7 +195,8 @@ export default function WriteBlog() {
         </div>
         <br />
         <Footer />
-    </div>)
+    </div>
+)
 }
 
 
